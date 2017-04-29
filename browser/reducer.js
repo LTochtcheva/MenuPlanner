@@ -37,7 +37,7 @@ const hardCodedRecipes = [
 
   const initialState = {
                       allRecipes: hardCodedRecipes,
-                      weekRecipes: [hardCodedRecipes[1], hardCodedRecipes[4]],
+                      weekRecipes: [hardCodedRecipes[1], hardCodedRecipes[3]],
                       selectedRecipe: hardCodedRecipes[1]
                       };
 
@@ -60,5 +60,6 @@ const hardCodedRecipes = [
   //   return newState;
   console.log('Inside reducer')
   console.log('Selected: ',state.selectedRecipe.title)
+  console.log('Week recipes: ',state.weekRecipes[0].title,state.weekRecipes[1].title)
   return state;
 };

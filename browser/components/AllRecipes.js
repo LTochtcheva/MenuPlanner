@@ -8,10 +8,10 @@ import {Link} from 'react-router';
 
     return (
       <ul className="list-unstyled">
-                    {this.props.allRecipes.map( (recipe) => {
-                    return (<li key={recipe.title}><Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link></li>)
-                    })}
-                </ul>
+        {this.props.allRecipes.map( (recipe) => {
+          return (<li key={recipe.title}><Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link></li>)
+        })}
+      </ul>
     )
   }
 }
