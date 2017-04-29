@@ -1,7 +1,7 @@
 // import {RECEIVE_PUPPIES,LOAD_PUPPIES,SELECT_PUPPY} from './action-creators';
 // import {combineReducers} from 'redux';
-const hardCodedRecipes = {
-    recipeOne: {
+const hardCodedRecipes = [
+    {
       title: 'Fish & Chips',
       category: 'fish',
       ingredients: 'White fish, potatoes, some flour, lots of oil',
@@ -9,7 +9,7 @@ const hardCodedRecipes = {
       likes: 100,
       description: 'Not available outside Great Britain'
     },
-    recipeTwo: {
+    {
       title: 'TheBestChiliEver',
       category: 'mixed',
       ingredients: 'Canned beans, ground beef, tomatoes',
@@ -17,7 +17,7 @@ const hardCodedRecipes = {
       likes: 10,
       description: 'Ask Caroline'
     },
-    recipeThree: {
+     {
       title: 'Signature Sandwich',
       category: 'no time to cook',
       ingredients: 'Bread - 2 slices, ham, tomatoes, salad leaves',
@@ -25,7 +25,7 @@ const hardCodedRecipes = {
       likes: 100,
       description: 'Put everything together'
     },
-    recipeFour: {
+     {
       title: 'Addictive Cucumbers',
       category: 'vegetables',
       ingredients: 'Cucumbers',
@@ -33,8 +33,10 @@ const hardCodedRecipes = {
       likes: 100,
       description: 'Slice cucumbers and spice them up with garlic chili paste, then add sesame soy soy dressing'
     }
-  }
+]
+
   const initialState = {
+                      allRecipes: hardCodedRecipes,
                       selectedRecipes: []
                       };
 
@@ -56,4 +58,5 @@ const hardCodedRecipes = {
 
   //   return newState;
   console.log('Inside reducer')
+  return state;
 };
