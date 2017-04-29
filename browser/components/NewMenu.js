@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class AddRecipe extends React.Component {
+export default class NewMenu extends React.Component {
 
   render () {
 

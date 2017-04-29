@@ -37,7 +37,8 @@ const hardCodedRecipes = [
 
   const initialState = {
                       allRecipes: hardCodedRecipes,
-                      selectedRecipes: []
+                      weekRecipes: [hardCodedRecipes[1], hardCodedRecipes[4]],
+                      selectedRecipe: hardCodedRecipes[1]
                       };
 
   export default (state = initialState, action) => {
@@ -58,5 +59,6 @@ const hardCodedRecipes = [
 
   //   return newState;
   console.log('Inside reducer')
+  console.log('Selected: ',state.selectedRecipe.title)
   return state;
 };
