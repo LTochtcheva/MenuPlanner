@@ -1,1 +1,20 @@
 
+.center {
+        text-align: center;
+      }
+.thumbnail img {
+    height:250px;
+    width:100%;
+}
+#new-menu {
+background-color: #a7f1a7
+}
+#menu {
+background-color: #a7f1a7
+}
+body {
+  background-image: url('./images/Sandwich-AvocadoBLT.jpg ')
+}
+.col-xs-4 {
+  margin-top: 15px;
+}

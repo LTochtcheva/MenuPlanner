@@ -7,13 +7,13 @@ import {Link} from 'react-router';
 
   render () {
     return (
-      <div>
+      <div className="container-fluid" id="menu">
         <div className="row">
           {
             this.props.currentWeekRecipes && this.props.currentWeekRecipes.map(recipe => (
-              <div className="col-md-4" key={ recipe.title }>
+              <div className="col-xs-4" key={ recipe.title }>
                 <Link className="thumbnail" to={`/recipes/${recipe.id}`}>
-                  <img src={ recipe.image }/>
+                  <img src={ recipe.image } className="img-rounded"/>
                   <div className="caption">
                     <h4>
                       <span>{ recipe.title }</span>
