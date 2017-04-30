@@ -7,14 +7,26 @@
     width:100%;
 }
 #new-menu {
-background-color: #a7f1a7
+background-color: #ccff99
 }
 #menu {
-background-color: #a7f1a7
+background-color: #ccff99
 }
 body {
   background-image: url('./images/Sandwich-AvocadoBLT.jpg ')
 }
 .col-xs-4 {
   margin-top: 15px;
+}
+#navbar {
+  background-color: #fffacd
+}
+#recipe-description {
+  color: #fffacd;
+}
+.custom {
+  width: 80px;
+}
+#add-recipe {
+  color: #fffacd;
 }

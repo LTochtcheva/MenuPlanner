@@ -12,15 +12,17 @@ import { connect } from 'react-redux'
               <img src={this.props.singleRecipe.image} />
             </div>
         </div>
-        <div>
-          <h3>Ingredients:</h3>
-          <h4>{this.props.singleRecipe.ingredients}</h4>
+        <div id="recipe-description">
+          <div >
+            <h3>Ingredients:</h3>
+            <h4>{this.props.singleRecipe.ingredients}</h4>
+          </div>
+          <div>
+            <h3>Instructions:</h3>
+            <h4>{this.props.singleRecipe.description}</h4>
+          </div>
         </div>
-        <div>
-          <h3>Instructions:</h3>
-          <h4>{this.props.singleRecipe.description}</h4>
-        </div>
-      </div>
+    </div>
       )
   }
 }
