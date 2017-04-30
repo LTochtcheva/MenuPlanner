@@ -1,4 +1,4 @@
-import {RECEIVE_RECIPES, SELECT_RECIPE} from './action-creators';
+import {RECEIVE_RECIPES, SELECT_RECIPE, SET_NEW_RECIPES} from './action-creators';
 
   const initialState = {
                       allRecipes: [],
@@ -17,6 +17,10 @@ import {RECEIVE_RECIPES, SELECT_RECIPE} from './action-creators';
 
             case SELECT_RECIPE:
               newState.selectedRecipe = action.selectedRecipe;
+              break;
+
+            case SET_NEW_RECIPES:
+              newState.newRecipes = action.newRecipes;
               break;
 
             default:

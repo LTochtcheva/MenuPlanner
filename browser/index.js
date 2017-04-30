@@ -5,8 +5,7 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
 
-import {loadRecipes} from './action-creators';
-import {selectRecipeAsync} from './action-creators'
+import {loadRecipes, selectRecipeAsync, fetchRandomRecipes} from './action-creators'
 
 import store from './store'
 import Root from './components/Root'
@@ -20,17 +19,17 @@ import AddRecipe from './components/AddRecipe'
 import NotFound from './components/NotFound'
 
 const onAPPLoad = store.dispatch(loadRecipes())
-const onLoadRecipe = function(nextRouterState) {
+const onLoadRecipe = (nextRouterState) => {
         const recipeId = nextRouterState.params.id;
-        console.log('ID in onLoadRecipe: ', recipeId)
         store.dispatch(selectRecipeAsync(recipeId));}
+const onNewMenu = store.dispatch(fetchRandomRecipes())
 
 render(
   <Provider store={ store }>
     <Router history={ hashHistory }>
       <Route path="/" component={ Root } onEnter={onAPPLoad}>
         <Route path="/menu" component={ Menu } />
-          <Route path="/menu/new" component={ NewMenu } />
+          <Route path="/menu/new" component={ NewMenu } onEnter={onNewMenu}/>
           <Route path="/menu/customize" component={ CustomizeMenu } />
         <Route path="/recipes" component={ AllRecipes } />
           <Route path="/recipes/add" component={ AddRecipe } />

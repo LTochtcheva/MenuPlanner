@@ -4,6 +4,7 @@ import axios from 'axios';
 export const RECEIVE_RECIPES = 'RECEIVE_RECIPES';
 export const LOAD_RECIPES = 'LOAD_RECIPES';
 export const SELECT_RECIPE = 'SELECT_RECIPE';
+export const SET_NEW_RECIPES = 'SET_NEW_RECIPES';
 
 //plain vanilla action creator
 export const receiveRecipes = (recipes) => {
@@ -16,6 +17,12 @@ export const selectRecipe = (recipe) => {
   return {
     type: SELECT_RECIPE,
     selectedRecipe: recipe
+  }
+}
+export const setNewRecipes = (recipes) => {
+  return {
+    type: SET_NEW_RECIPES,
+    newRecipes: recipes
   }
 }
 
@@ -39,4 +46,13 @@ export const selectRecipeAsync = (recipeId) => {
     .catch(err => console.error(err));
   }
 }
-
+//this is thunk creator for fetching 7 random recipes recipe
+export const fetchRandomRecipes = () => {
+  console.log('I was here')
+  return (dispatch) => {
+    axios.get('/api/recipes/random')
+    .then(res => res.data)
+    .then(recipes => dispatch(setNewRecipes(recipes)))
+    .catch(err => console.error(err));
+  }
+}

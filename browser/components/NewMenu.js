@@ -13,7 +13,7 @@ class NewMenu extends React.Component {
             this.props.newRecipes && this.props.newRecipes.map(recipe => (
               <div className="col-xs-4" key={ recipe.title }>
                 <Link className="thumbnail" to={`/recipes/${recipe.id}`}>
-                  <img src={ recipe.image } className="img-rounded"/>
+                  <img src={ recipe.images } className="img-rounded"/>
                   <div className="caption">
                     <h4>
                       <span>{ recipe.title }</span>

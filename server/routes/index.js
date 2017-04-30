@@ -1,9 +1,25 @@
 const express = require('express');
 const router = express.Router();
 const Recipe = require('../models/recipe');
+const random = require('random-number-in-range');
 module.exports = router;
 
 
+router.get('/api/recipes/random', function(req, res, next) {
+  let randomIds = [];
+  for (let i = 0; i < 8; i++) {
+    randomIds.push(random(1, 15));
+  }
+  Recipe.findAll({
+    where: {
+      id: randomIds
+    }
+  })
+    .then(function (foundRecipes) {
+            res.json(foundRecipes);
+         })
+    .catch(next);
+});
 
 router.get('/api/recipes', function(req, res, next) {
   Recipe.findAll({})
@@ -12,6 +28,7 @@ router.get('/api/recipes', function(req, res, next) {
          })
     .catch(next);
 });
+
 
 router.get('/api/recipes/:id', function(req, res, next) {
   console.log('ID: ', req.params)
