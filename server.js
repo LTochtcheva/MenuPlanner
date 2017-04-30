@@ -2,12 +2,14 @@
  const express = require('express');
  const volleyball = require('volleyball');
  const path = require('path');
+ const favicon = require('serve-favicon');
  const bodyParser = require('body-parser');
  const routes = require('./server/routes');
  const models = require('./server/models');
  const Promise = require('bluebird');
 
  const app = express();
+
 
  app.use(volleyball);
 
@@ -21,6 +23,7 @@ app.use(bodyParser.json());
 app.get('/', function (req, res, next) {
   res.send('Welcome to Menu Planner!');
  });
+
 app.use('/', routes);
 
 Promise.all([

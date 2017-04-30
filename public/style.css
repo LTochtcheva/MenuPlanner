@@ -22,11 +22,16 @@ body {
   background-color: #fffacd
 }
 #recipe-description {
-  color: #fffacd;
+  color: black;
 }
 .custom {
   width: 80px;
 }
 #add-recipe {
   color: #fffacd;
+}
+.list-item img {
+  height:200px;
+  width:200px;
+  margin-left: 20px;
 }

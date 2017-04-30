@@ -3,7 +3,9 @@ const router = express.Router();
 const Recipe = require('../models/recipe');
 module.exports = router;
 
-router.get('/recipes', function(req, res, next) {
+
+
+router.get('/api/recipes', function(req, res, next) {
   Recipe.findAll({})
     .then(function (foundRecipes) {
             res.json(foundRecipes);
@@ -11,7 +13,8 @@ router.get('/recipes', function(req, res, next) {
     .catch(next);
 });
 
-router.get('/recipes/:id', function(req, res, next) {
+router.get('/api/recipes/:id', function(req, res, next) {
+  console.log('ID: ', req.params)
   Recipe.findOne({
     where: { id: req.params.id}
   }).
@@ -24,7 +27,8 @@ router.get('/recipes/:id', function(req, res, next) {
   .catch(next);
 });
 
-router.post('/recipes', function(req, res, next) {
+
+router.post('/api/recipes', function(req, res, next) {
     Recipe.create(req.body)
     .then(function (newRecipe) {
        res.json(newRecipe);
@@ -32,7 +36,7 @@ router.post('/recipes', function(req, res, next) {
     .catch(next);
 });
 
-router.put('/recipes/:id', function(req, res, next) {
+router.put('/api/recipes/:id', function(req, res, next) {
       Recipe.update(req.body,
          {
           where: {

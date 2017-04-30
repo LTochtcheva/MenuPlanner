@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
         <div className="jumbotron">
           <h2>{this.props.singleRecipe.title}</h2>
             <div>
-              <img src={this.props.singleRecipe.image} />
+              <img src={this.props.singleRecipe.images} />
             </div>
         </div>
         <div id="recipe-description">
