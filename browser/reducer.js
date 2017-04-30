@@ -29,7 +29,7 @@ const hardCodedRecipes = [
       title: 'Addictive Cucumbers',
       category: 'vegetables',
       ingredients: 'Cucumbers',
-      image: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRVBhWLz-Y66aqdPcbTstUvOv-osgauhvQOv2EW0IMQcmHuBym-',
+      image: 'http://asiasociety.org/files/imagecache/centers_articles_pages/%20%EB%AC%B4%EC%B9%A8.jpg',
       likes: 100,
       description: 'Slice cucumbers and spice them up with garlic chili paste, then add sesame soy soy dressing'
     }
@@ -37,7 +37,8 @@ const hardCodedRecipes = [
 
   const initialState = {
                       allRecipes: hardCodedRecipes,
-                      weekRecipes: [hardCodedRecipes[1], hardCodedRecipes[3]],
+                      currentWeekRecipes: [hardCodedRecipes[1], hardCodedRecipes[3]],
+                      newRecipes: [hardCodedRecipes[2], hardCodedRecipes[0]],
                       selectedRecipe: hardCodedRecipes[1]
                       };
 
@@ -59,7 +60,6 @@ const hardCodedRecipes = [
 
   //   return newState;
   console.log('Inside reducer')
-  console.log('Selected: ',state.selectedRecipe.title)
-  console.log('Week recipes: ',state.weekRecipes[0].title,state.weekRecipes[1].title)
+
   return state;
 };

@@ -1,16 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router';
+
 /* -----------------    COMPONENT     ------------------ */
  class Menu extends React.Component {
 
   render () {
-
     return (
       <div>
         <div className="row">
           {
-            this.props.weekRecipes && this.props.weekRecipes.map(recipe => (
+            this.props.currentWeekRecipes && this.props.currentWeekRecipes.map(recipe => (
               <div className="col-md-4" key={ recipe.title }>
                 <Link className="thumbnail" to={`/recipes/${recipe.id}`}>
                   <img src={ recipe.image }/>
@@ -34,7 +34,7 @@ import {Link} from 'react-router';
 const mapStateToProps = (state) => {
 
   return {
-    weekRecipes: state.weekRecipes
+    currentWeekRecipes: state.currentWeekRecipes
   }
 };
 
