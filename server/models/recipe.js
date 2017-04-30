@@ -1,32 +1,31 @@
 'use strict'
-
-const db = require('../db');
-const DataTypes = db.Sequelize;
+const Sequelize = require('sequelize');
+const db = require('./db');
 
 module.exports = db.define('recipe', {
   title: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
     validate: {
       notEmpty: true,
     }
   },
   category: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
   ingredients: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
   images: {
-    type: DataTypes.STRING
+    type: Sequelize.STRING
   },
   likes: {
-    type: DataTypes.INTEGER
+    type: Sequelize.INTEGER
   },
   description: {
-    type: DataTypes.TEXT,
+    type: Sequelize.TEXT,
     allowNull: false
   }
 });

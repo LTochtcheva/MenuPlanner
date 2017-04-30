@@ -29,15 +29,7 @@ app.use(bodyParser.json());
 //         });
 //     })
 //     .catch(console.error
-// app.get('/api/recipes', function (req, res) {
-//   res.json(recipes);
-// });
-
-// app.get('/api/recipes/:id', function (req, res) {
-//   const aRecipe = recipes.find(r => r.id === Number(req.params.id));
-//   if (!aPuppy) res.status(404).end();
-//   else res.json(aPuppy);
-// });
+//
 app.get('/', function (req, res, next) {
   res.send('Welcome to Menu Planner!');
  });

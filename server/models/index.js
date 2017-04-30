@@ -9,8 +9,8 @@ const User = require('./user');
 
 // Form the associations
 
-// Recipe.belongsTo(User);
-// User.hasMany(Recipe);
+Recipe.belongsTo(User);
+User.hasMany(Recipe);
 
 module.exports = {
   Recipe: Recipe,
