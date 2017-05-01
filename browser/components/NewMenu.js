@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import {Link} from 'react-router';
 
 import days from '../constants.js'
+import {fetchRandomRecipes, setCurrentRecipes} from '../action-creators'
 /* -----------------    COMPONENT     ------------------ */
 class NewMenu extends React.Component {
 
@@ -26,6 +27,19 @@ class NewMenu extends React.Component {
             ))
           }
         </div>
+        <div className="row equal center">
+          <div id="NewMenu-btns">
+            <button id="setCurrent" className="btn btn-warning" onClick={this.props.setCurrent}>
+              I like It!
+            </button>
+            <div >
+              <button  className="btn btn-info" onClick={this.props.tryAgainFunc} >Try Again</button>
+            </div>
+            <Link to="/menu/customize">
+            <button id="custom" className="btn btn-info" >Customize</button>
+            </Link>
+          </div>
+        </div>
     </div>
     )
   }
@@ -38,6 +52,14 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatch = null
+const mapDispatch = (dispatch) =>
+  ({ tryAgainFunc: () => {
+      dispatch(fetchRandomRecipes())
+     },
+     setCurrent: () => {
+      dispatch(setCurrentRecipes())
+     }
+
+})
 
 export default connect(mapStateToProps, mapDispatch)(NewMenu)

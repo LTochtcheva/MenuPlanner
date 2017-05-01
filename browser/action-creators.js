@@ -5,6 +5,7 @@ export const RECEIVE_RECIPES = 'RECEIVE_RECIPES';
 export const LOAD_RECIPES = 'LOAD_RECIPES';
 export const SELECT_RECIPE = 'SELECT_RECIPE';
 export const SET_NEW_RECIPES = 'SET_NEW_RECIPES';
+export const SET_CURRENT = 'SET_CURRENT';
 
 //plain vanilla action creator
 export const receiveRecipes = (recipes) => {
@@ -23,6 +24,11 @@ export const setNewRecipes = (recipes) => {
   return {
     type: SET_NEW_RECIPES,
     newRecipes: recipes
+  }
+}
+export const setCurrentRecipes = () => {
+  return {
+    type: SET_CURRENT
   }
 }
 
