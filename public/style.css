@@ -7,7 +7,15 @@
     width:100%;
 }
 #new-menu {
-background-color: #ccff99
+background-color: #ccff99;
+}
+#new-menu img {
+  height:80%;
+    width:100%;
+}
+.equal {
+  display: flex;
+  display: -webkit-flex;
 }
 #menu {
 background-color: #ccff99

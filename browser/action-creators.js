@@ -48,7 +48,6 @@ export const selectRecipeAsync = (recipeId) => {
 }
 //this is thunk creator for fetching 7 random recipes recipe
 export const fetchRandomRecipes = () => {
-  console.log('I was here')
   return (dispatch) => {
     axios.get('/api/recipes/random')
     .then(res => res.data)

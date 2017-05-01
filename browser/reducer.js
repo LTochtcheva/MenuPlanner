@@ -1,8 +1,16 @@
 import {RECEIVE_RECIPES, SELECT_RECIPE, SET_NEW_RECIPES} from './action-creators';
-
+  const noCurrent = {
+    title: 'Plan New Menu',
+      category: 'default',
+      ingredients: '',
+      images: 'https://s-media-cache-ak0.pinimg.com/originals/b8/6d/9d/b86d9d3dad73930ed6f656bb47ecab1a.jpg',
+      likes: 0,
+      description: 'Looks like you do not have a plan'
+  }
   const initialState = {
                       allRecipes: [],
-                      currentWeekRecipes: [],
+                      currentWeekRecipes: [noCurrent, noCurrent, noCurrent,noCurrent,noCurrent,
+                        noCurrent,noCurrent],
                       newRecipes: [],
                       selectedRecipe: {}
                       };

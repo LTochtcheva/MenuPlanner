@@ -2,16 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router';
 
+import days from '../constants.js'
 /* -----------------    COMPONENT     ------------------ */
 class NewMenu extends React.Component {
 
   render () {
     return (
       <div className="container-fluid" id="new-menu">
-        <div className="row">
+        <div className="row equal">
           {
-            this.props.newRecipes && this.props.newRecipes.map(recipe => (
-              <div className="col-xs-4" key={ recipe.title }>
+            this.props.newRecipes && this.props.newRecipes.map((recipe, i) => (
+              <div className="col-md-2" key={ i }>
+                <h3>{days[i]}</h3>
                 <Link className="thumbnail" to={`/recipes/${recipe.id}`}>
                   <img src={ recipe.images } className="img-rounded"/>
                   <div className="caption">

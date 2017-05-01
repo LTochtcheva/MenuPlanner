@@ -4,12 +4,17 @@ const Recipe = require('../models/recipe');
 const random = require('random-number-in-range');
 module.exports = router;
 
-
-router.get('/api/recipes/random', function(req, res, next) {
-  let randomIds = [];
-  for (let i = 0; i < 8; i++) {
-    randomIds.push(random(1, 15));
+const getRandomIds =  () => {
+  let ids = [];
+  while ( ids.length < 7 ) {
+    let x = random(1, 15);
+    if(ids.indexOf(x) === -1) ids.push(x);
   }
+  return ids;
+}
+router.get('/api/recipes/random', function(req, res, next) {
+  let randomIds = getRandomIds();
+
   Recipe.findAll({
     where: {
       id: randomIds
@@ -31,7 +36,6 @@ router.get('/api/recipes', function(req, res, next) {
 
 
 router.get('/api/recipes/:id', function(req, res, next) {
-  console.log('ID: ', req.params)
   Recipe.findOne({
     where: { id: req.params.id}
   }).
