@@ -7,7 +7,7 @@
  const routes = require('./server/routes');
  const models = require('./server/models');
  const Promise = require('bluebird');
-
+ const PORT = process.env.PORT || 3000
  const app = express();
 
 
@@ -31,8 +31,8 @@ Promise.all([
         models.Recipe.sync({})
     ])
     .then(function () {
-        app.listen(3000, function () {
-            console.log('Server is listening on port 3000!');
+        app.listen(PORT, function () {
+            console.log(`Server is listening on port ${PORT}`);
         });
     })
     .catch(console.error);
